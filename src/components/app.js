@@ -4,11 +4,12 @@ import { Component } from 'react';
 import SearchBar from './search_bar';
 import VideoList from './video_list';
 import VideoDetail from './video_detail'
+import BookList from '../containers/book-list';
 
 import YTSearch from 'youtube-api-search'
 const API_KEY  = 'AIzaSyC4dPeIGgFWD9grpr9Q1qalF1Nk8fRnkio';
 
-export default class App extends Component {
+ class App extends Component {
     constructor(props){
         super(props);
         this.state = {
@@ -38,7 +39,9 @@ export default class App extends Component {
         videos={this.state.videos} 
         onVideoSelect={selectedVideo=>this.setState({selectedVideo})}
       />
+      <BookList />
       </div>
     );
   }
 }
+export default App;
